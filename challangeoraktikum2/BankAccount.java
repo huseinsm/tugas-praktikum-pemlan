@@ -33,7 +33,7 @@ public class BankAccount {
             System.out.println("nominal harus lebih dari 0!\n");
         } else {
             saldo += nominal;
-            System.out.println("nominal sebesar " + nominal + "berhasil ditambahkan\n");
+            System.out.println("nominal sebesar " + nominal + " berhasil ditambahkan\n");
         }
         
     }
@@ -45,17 +45,20 @@ public class BankAccount {
             System.out.println("saldo anda tidak mencukupi jumlah penarikan\n");
         } else {
             saldo -= nominal;
-            System.out.println("penarikan berhasil. Saat ini saldo Anda adalah \n" + saldo);
+            System.out.println("penarikan berhasil. Saat ini saldo Anda adalah " + saldo + "\n");
         }
     }
     
-    public void transfer(double nominal) {
+    public void transfer(BankAccount receiver, double nominal) {
         if(nominal < 0) {
             System.out.println("nominal harus lebih dari 0\n");
         } else if (nominal > saldo) {
             System.out.println("saldo anda tidak mencukupi\n");
         } else {
-            System.out.println("saldo anda tidak mencukupi\n");
+            receiver.saldo += nominal;
+            saldo -= nominal;
+            
+            System.out.println("Transaksi transfer berhasil. saldo Anda saat ini " + saldo + "\n");
         }
     }
     
