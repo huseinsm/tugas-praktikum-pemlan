@@ -30,7 +30,7 @@ public class Challangeoraktikum2 {
         akun1.displayInfo();
         akun2.displayInfo();
         
-        akun1.transfer(20000);
+        akun1.transfer(akun2, 20000);
     }
     
 }
