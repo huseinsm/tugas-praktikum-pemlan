@@ -19,7 +19,6 @@ public class Challangeoraktikum2 {
         BankAccount akun2 = new BankAccount("13962", "Sidharta");
         
         akun1.displayInfo();
-        
         akun2.displayInfo();
         
         akun2.deposit(-2);
@@ -27,10 +26,9 @@ public class Challangeoraktikum2 {
         akun1.withdraw(7000);
         akun2.deposit(32000);
         
+        akun1.transfer(akun2, 20000);
         akun1.displayInfo();
         akun2.displayInfo();
-        
-        akun1.transfer(akun2, 20000);
     }
     
 }
