@@ -47,7 +47,7 @@ public class BoBoiBoy {
     
     // adapun method ini akan memperkenalkan teman favorit, disertai atribut teman favorit
     public void siapaTemanFavorit() {
-        System.out.println("Hmmm, dia adalahhh" + temanFavorit);
+        System.out.println("Hmmm, dia adalahhh " + temanFavorit);
     }
 
     // Pada method ini akan memperkenalkan skill, disertai skill dan kekuatan skill yang dimiliki
