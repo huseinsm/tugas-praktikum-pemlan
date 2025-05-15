@@ -75,12 +75,12 @@ class ProductManager {
 
     // Menghapus produk berdasarkan ID
     // cara efektif remove anggota sebuah list
-    public void removeProductById(int id) {
+    public void removeProduct(int id) {
         products.removeIf(p -> p.getId() == id);
     }
 
     // Mencari produk berdasarkan nama dan kategori.
-    public List<Product<?>> searchProduct(String name, String category) {
+    public List<Product<?>> search(String name, String category) {
         // untuk menampung hasil search.
         List<Product<?>> result = new ArrayList<>();
         // pengulangan, untuk mencari produk dengan for each untuk anggota2 di list products
@@ -94,7 +94,7 @@ class ProductManager {
     }
 
     // Menampilkan semua produk, dimana diurutkan berdasarkan kategori. menggunakan fungsi yang sudah disediakan oleh list collection.
-    public void displayAllProducts() {
+    public void displayProducts() {
         // p1 dan p2 merepresentasikan elemen di dalam produk, selanjutnya akan dibuat rumus sort.
         products.sort((p1, p2) -> p1.getCategory().toString().compareTo(p2.getCategory().toString()));
         for (Product<?> p : products) {
@@ -142,12 +142,12 @@ public class Marketplace {
 
         // Tampilkan semua produk.
         System.out.println("All Products:");
-        manager.displayAllProducts();
+        manager.displayProducts();
 
         // Implementasi menghapus produk, kemudian menampilkan kembali daftar produk.
         System.out.println("\nRemoving product by Id:");
-        manager.removeProductById(2);
-        manager.displayAllProducts();
+        manager.removeProduct(2);
+        manager.displayProducts();
 
         // Menampilkan kategori apa saja yang ada.
         System.out.println("\nCategories available:");
@@ -155,7 +155,7 @@ public class Marketplace {
 
         // Cari produk.
         System.out.println("\nSearching for Chair in Furniture:");
-        for (Product<?> p : manager.searchProduct("Chair", "Furniture")) {
+        for (Product<?> p : manager.search("Chair", "Furniture")) {
             System.out.println(p);
         }
 
